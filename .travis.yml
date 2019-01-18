@@ -3,10 +3,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t waltermyersiii/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t waltermy/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run waltermyersiii/react-test npm test -- --coverage
+  - docker run waltermy/react-test npm test -- --coverage
 
 after_success:
   - docker build -t waltermy/multi-client ./client
