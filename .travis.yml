@@ -6,7 +6,7 @@ before_install:
   - docker build -t waltermyersiii/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run waltermyersiii/react-test npm waltermyersiii/react-test -- --coverage
+  - docker run waltermyersiii/react-test npm test -- --coverage
 
 after_success:
   - docker build -t waltermyersiii/multi-client ./client
