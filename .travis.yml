@@ -9,14 +9,14 @@ script:
   - docker run waltermyersiii/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t waltermyersiii/multi-client ./client
-  - docker build -t waltermyersiii/multi-nginx ./nginx
-  - docker build -t waltermyersiii/multi-server ./server
-  - docker build -t waltermyersiii/multi-worker ./worker
+  - docker build -t waltermy/multi-client ./client
+  - docker build -t waltermy/multi-nginx ./nginx
+  - docker build -t waltermy/multi-server ./server
+  - docker build -t waltermy/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push to Docker hub
-  - docker push waltermyersiii/multi-client
-  - docker push waltermyersiii/multi-nginx
-  - docker push waltermyersiii/multi-server
-  - docker push waltermyersiii/multi-worker
+  - docker push waltermy/multi-client
+  - docker push waltermy/multi-nginx
+  - docker push waltermy/multi-server
+  - docker push waltermy/multi-worker
